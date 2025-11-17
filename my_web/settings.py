@@ -25,7 +25,11 @@ SECRET_KEY = 'w&at&m0ga!0kdkjy0ud^-q8uwh6-^fz%(n(y)vkqw1x**=$#82'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
+    "church-web-n35s.onrender.com",
+]
 
 # Application definition
 
