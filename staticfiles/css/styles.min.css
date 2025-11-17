@@ -1504,18 +1504,6 @@ body {
   object-fit: cover;
 }
 
-.parallax {
-  background-image: url("{% static 'img/pexels-bruno-ticianelli-210264-1042428.jpg' %}");
-  height: 100vh;
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  
-  position: relative;
-  width: 100%;
-  z-index: 1;
-}
 
 /* !
  * baguetteBox.js
@@ -3980,3 +3968,4 @@ button.swiper-pagination-bullet {
   transform: translate(-50%, -50%);
   pointer-events: none;
 }
+
