@@ -20,18 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-import os
-from dotenv import load_dotenv
-load_dotenv()
-
-SECRET_KEY = os.getenv("SECRET_KEY")
-
+SECRET_KEY = 'w&at&m0ga!0kdkjy0ud^-q8uwh6-^fz%(n(y)vkqw1x**=$#82'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "False").lower() == "true"
+DEBUG = True
 
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
-
+ALLOWED_HOSTS = []
 
 # Application definition
 
@@ -141,7 +135,3 @@ from django.contrib.messages import constants as messages
 MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
-
-
-
-
