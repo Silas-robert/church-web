@@ -2,185 +2,225 @@
 {% load widget_tweaks %}
 <!DOCTYPE html>
 <html data-bs-theme="light" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" /><title>Home - Brand</title><link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css?h=ef7988054cfc4915d0c84ecb4ac60fe0" />
-    <link rel="stylesheet" href="{% static 'css/styles.min.css' %}" />
-    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
-  </head>
-  <body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="57">
-    <!-- Floating Messages -->
-    {% if messages %}
-      <div class="position-fixed top-0 start-50 translate-middle-x mt-3" style="z-index: 1050; width: auto; max-width: 400px;">
-        {% for message in messages %}
-          <div class="alert alert-{{ message.tags }} alert-dismissible fade show text-center shadow" role="alert" style="border: none; color: red; font-weight: normal;">
-            {{ message }}
-          </div>
-        {% endfor %}
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <title>Home - Brand</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css?h=ef7988054cfc4915d0c84ecb4ac60fe0" />
+  <link rel="stylesheet" href="{% static 'css/styles.min.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+</head>
+
+<body id="page-top" data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="57">
+  <!-- Floating Messages -->
+  {% if messages %}
+  <div class="position-fixed top-0 start-50 translate-middle-x mt-3"
+    style="z-index: 1050; width: auto; max-width: 400px;">
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show text-center shadow" role="alert"
+      style="border: none; color: red; font-weight: normal;">
+      {{ message }}
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {<!-- Start: Navbar Right Links -->
+  <nav class="navbar navbar-expand-lg fixed-top bg-light shadow py-3">
+    <div class="container-fluid">
+      <a class="navbar-brand d-flex align-items-center" href="#">
+        <span
+          class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16"
+            class="bi bi-bezier">
+            <path fill-rule="evenodd"
+              d="M0 10.5A1.5 1.5 0 0 1 1.5 9h1A1.5 1.5 0 0 1 4 10.5v1A1.5 1.5 0 0 1 2.5 13h-1A1.5 1.5 0 0 1 0 11.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm10.5.5A1.5 1.5 0 0 1 13.5 9h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM6 4.5A1.5 1.5 0 0 1 7.5 3h1A1.5 1.5 0 0 1 10 4.5v1A1.5 1.5 0 0 1 8.5 7h-1A1.5 1.5 0 0 1 6 5.5zM7.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z">
+            </path>
+            <path
+              d="M6 4.5H1.866a1 1 0 1 0 0 1h2.668A6.517 6.517 0 0 0 1.814 9H2.5c.123 0 .244.015.358.043a5.517 5.517 0 0 1 3.185-3.185A1.503 1.503 0 0 1 6 5.5zm3.957 1.358A1.5 1.5 0 0 0 10 5.5v-1h4.134a1 1 0 1 1 0 1h-2.668a6.517 6.517 0 0 1 2.72 3.5H13.5c-.123 0-.243.015-.358.043a5.517 5.517 0 0 0-3.185-3.185z">
+            </path>
+          </svg>
+        </span><span class="fw-bolder" style="color: #9c405c;">KKMT</span>
+      </a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span
+          class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navcol-2">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'home' %}">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'aboutUs' %}">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'sermons' %}">Sermons</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'events' %}">Events</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">More pages</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="{% url 'blog' %}">Blog/Devotions</a><a class="dropdown-item"
+                href="{% url 'testimony' %}">Testimonies</a><a class="dropdown-item"
+                href="{% url 'prayer_list' %}">Prayer Request&nbsp;</a><a class="dropdown-item"
+                href="{% url 'ministries' %}">Ministries &amp; Projects&nbsp;</a><a class="dropdown-item"
+                href="{% url 'live-stream' %}">Live-Stream</a><a class="dropdown-item"
+                href="{% url 'gallery' %}">Gallery</a><a class="dropdown-item"
+                href="{% url 'join' %}">Join/Membership</a><a class="dropdown-item" href="{% url 'visit' %}">Visit
+                Us</a>
+            </div>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'contact' %}">Contact</a>
+          </li>
+        </ul><a class="btn btn-primary ms-md-2" role="button" data-bss-hover-animate="pulse" href="{% url 'donate' %}"
+          style="background: linear-gradient(white, #9c405c 0%), #9c405c;border-radius: 0px;">DONATE</a>
       </div>
-    {% endif %}
-    
-    {<!-- Start: Navbar Right Links -->
-    <nav class="navbar navbar-expand-lg fixed-top bg-light shadow py-3">
-      <div class="container-fluid">
-        <a class="navbar-brand d-flex align-items-center" href="#">
-          <span class="bs-icon-sm bs-icon-rounded bs-icon-primary d-flex justify-content-center align-items-center me-2 bs-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-bezier">
-              <path fill-rule="evenodd" d="M0 10.5A1.5 1.5 0 0 1 1.5 9h1A1.5 1.5 0 0 1 4 10.5v1A1.5 1.5 0 0 1 2.5 13h-1A1.5 1.5 0 0 1 0 11.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zm10.5.5A1.5 1.5 0 0 1 13.5 9h1a1.5 1.5 0 0 1 1.5 1.5v1a1.5 1.5 0 0 1-1.5 1.5h-1a1.5 1.5 0 0 1-1.5-1.5zm1.5-.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5zM6 4.5A1.5 1.5 0 0 1 7.5 3h1A1.5 1.5 0 0 1 10 4.5v1A1.5 1.5 0 0 1 8.5 7h-1A1.5 1.5 0 0 1 6 5.5zM7.5 4a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5z"></path>
-              <path d="M6 4.5H1.866a1 1 0 1 0 0 1h2.668A6.517 6.517 0 0 0 1.814 9H2.5c.123 0 .244.015.358.043a5.517 5.517 0 0 1 3.185-3.185A1.503 1.503 0 0 1 6 5.5zm3.957 1.358A1.5 1.5 0 0 0 10 5.5v-1h4.134a1 1 0 1 1 0 1h-2.668a6.517 6.517 0 0 1 2.72 3.5H13.5c-.123 0-.243.015-.358.043a5.517 5.517 0 0 0-3.185-3.185z"></path>
-            </svg>
-          </span><span class="fw-bolder" style="color: #9c405c;">KKMT</span>
-        </a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-2"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button><div class="collapse navbar-collapse" id="navcol-2">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'home' %}">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'aboutUs' %}">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'sermons' %}">Sermons</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'events' %}">Events</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#">More pages</a><div class="dropdown-menu">
-                <a class="dropdown-item" href="{% url 'blog' %}">Blog/Devotions</a><a class="dropdown-item" href="{% url 'testimony' %}">Testimonies</a><a class="dropdown-item" href="{% url 'prayer_list' %}">Prayer Request&nbsp;</a><a class="dropdown-item" href="{% url 'ministries' %}">Ministries &amp; Projects&nbsp;</a><a class="dropdown-item" href="{% url 'live-stream' %}">Live-Stream</a><a class="dropdown-item" href="{% url 'gallery' %}">Gallery</a><a class="dropdown-item" href="{% url 'join' %}">Join/Membership</a><a class="dropdown-item" href="{% url 'visit' %}">Visit Us</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'contact' %}">Contact</a>
-            </li>
-          </ul><a class="btn btn-primary ms-md-2" role="button" data-bss-hover-animate="pulse" href="{% url 'donate' %}" style="background: linear-gradient(white, #9c405c 0%), #9c405c;border-radius: 0px;">DONATE</a>
+    </div>
+  </nav>
+  <!-- End: Navbar Right Links -->}
+  <div class="text-bg-light pb-0 mt-5 pt-5">
+    <h1 class="text-center">Join Our Family</h1>
+    <p class="text-center" style="color: #ef2222;">Become a member or volunteer to serve God and the community</p>
+  </div>
+  <div class="mt-5 pt-0">
+    <h2 class="text-center">How to Become a Member</h2>
+    <ul class="list-group ps-5 pe-5 me-5 ms-5">
+      <li class="list-group-item">
+        <span>List Group Item 1</span>
+      </li>
+      <li class="list-group-item">
+        <span>List Group Item 2</span>
+      </li>
+      <li class="list-group-item">
+        <span>List Group Item 3</span>
+      </li>
+    </ul>
+  </div>
+  <div>
+    <!-- Start: Features Cards -->
+    <div class="container py-4 py-xl-5 pt-5 mt-5">
+      <div class="row mb-5">
+        <div class="col-md-8 col-xl-6 text-center text-bg-light mx-auto">
+          <h2 class="pt-0">Volunteer Opportunities</h2>
+          <p class="w-lg-50">Curae hendrerit donec commodo hendrerit egestas tempus, turpis facilisis nostra nunc.
+            Vestibulum dui eget ultrices.</p>
         </div>
       </div>
-    </nav>
-    <!-- End: Navbar Right Links -->}
-    <div class="text-bg-light pb-0 mt-5 pt-5">
-      <h1 class="text-center">Join Our Family</h1><p class="text-center" style="color: #ef2222;">Become a member or volunteer to serve God and the community</p>
-    </div>
-    <div class="mt-5 pt-0">
-      <h2 class="text-center">How to Become a Member</h2><ul class="list-group ps-5 pe-5 me-5 ms-5">
-        <li class="list-group-item">
-          <span>List Group Item 1</span>
-        </li>
-        <li class="list-group-item">
-          <span>List Group Item 2</span>
-        </li>
-        <li class="list-group-item">
-          <span>List Group Item 3</span>
-        </li>
-      </ul>
-    </div>
-    <div>
-      <!-- Start: Features Cards -->
-      <div class="container py-4 py-xl-5 pt-5 mt-5">
-        <div class="row mb-5">
-          <div class="col-md-8 col-xl-6 text-center text-bg-light mx-auto">
-            <h2 class="pt-0">Volunteer Opportunities</h2><p class="w-lg-50">Curae hendrerit donec commodo hendrerit egestas tempus, turpis facilisis nostra nunc. Vestibulum dui eget ultrices.</p>
+      <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
+        <div class="col">
+          <div class="card">
+            <div class="card-body p-4">
+              <h4 class="card-title">Children's Ministry</h4>
+              <p class="card-text">Erat netus est hendrerit, nullam et quis ad cras porttitor iaculis. Bibendum
+                vulputate cras aenean.</p>
+            </div>
           </div>
         </div>
-        <div class="row gy-4 row-cols-1 row-cols-md-2 row-cols-xl-3">
-          <div class="col">
-            <div class="card">
-              <div class="card-body p-4">
-                <h4 class="card-title">Children's Ministry</h4><p class="card-text">Erat netus est hendrerit, nullam et quis ad cras porttitor iaculis. Bibendum vulputate cras aenean.</p>
-              </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-body p-4">
+              <h4 class="card-title">Youth Ministry</h4>
+              <p class="card-text">Erat netus est hendrerit, nullam et quis ad cras porttitor iaculis. Bibendum
+                vulputate cras aenean.</p>
             </div>
           </div>
-          <div class="col">
-            <div class="card">
-              <div class="card-body p-4">
-                <h4 class="card-title">Youth Ministry</h4><p class="card-text">Erat netus est hendrerit, nullam et quis ad cras porttitor iaculis. Bibendum vulputate cras aenean.</p>
-              </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-body p-4">
+              <h4 class="card-title">Women's Ministry</h4>
+              <p class="card-text">Erat netus est hendrerit, nullam et quis ad cras porttitor iaculis. Bibendum
+                vulputate cras aenean.</p>
             </div>
           </div>
-          <div class="col">
-            <div class="card">
-              <div class="card-body p-4">
-                <h4 class="card-title">Women's Ministry</h4><p class="card-text">Erat netus est hendrerit, nullam et quis ad cras porttitor iaculis. Bibendum vulputate cras aenean.</p>
-              </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-body p-4">
+              <h4 class="card-title">Worship Team</h4>
+              <p class="card-text">Erat netus est hendrerit, nullam et quis ad cras porttitor iaculis. Bibendum
+                vulputate cras aenean.</p>
             </div>
           </div>
-          <div class="col">
-            <div class="card">
-              <div class="card-body p-4">
-                <h4 class="card-title">Worship Team</h4><p class="card-text">Erat netus est hendrerit, nullam et quis ad cras porttitor iaculis. Bibendum vulputate cras aenean.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col">
-            <div class="card">
-              <div class="card-body p-4">
-                <h4 class="card-title">Men's Ministry</h4><p class="card-text">Erat netus est hendrerit, nullam et quis ad cras porttitor iaculis. Bibendum vulputate cras aenean.</p>
-              </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <div class="card-body p-4">
+              <h4 class="card-title">Men's Ministry</h4>
+              <p class="card-text">Erat netus est hendrerit, nullam et quis ad cras porttitor iaculis. Bibendum
+                vulputate cras aenean.</p>
             </div>
           </div>
         </div>
       </div>
-      <!-- End: Features Cards -->
     </div>
-    <div>
-      <!-- Start: Pretty Registration Form -->
-      <div class="row register-form">
-        <div class="col-md-8 offset-md-2 text-bg-light">
-          <form class="custom-form" method="POST" action="">
-            <h3 style="color: #ef2222;">Sign Up to join or Volunteer</h3>
-            {% csrf_token %}
+    <!-- End: Features Cards -->
+  </div>
+  <div>
+    <!-- Start: Pretty Registration Form -->
+    <div class="row register-form">
+      <div class="col-md-8 offset-md-2 text-bg-light">
+        <form class="custom-form" method="POST" action="">
+          <h3 style="color: #ef2222;">Sign Up to join or Volunteer</h3>
+          {% csrf_token %}
 
-            <!-- Messages -->
-            {% if messages %}
-              <div class="container mt-3">
-                {% for message in messages %}
-                  <div class="alert alert-{{ message.tags }} alert-dismissible fade show text-start shadow" role="alert" style="background: linear-gradient(white, #9c405c 1%); border: none; color: black; font-weight: bold;">
-                    {{ message }}
-                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                  </div>
-                {% endfor %}
-              </div>
-            {% endif %}
+          <!-- Messages -->
+          {% if messages %}
+          <div class="container mt-3">
+            {% for message in messages %}
+            <div class="alert alert-{{ message.tags }} alert-dismissible fade show text-start shadow" role="alert"
+              style="background: linear-gradient(white, #9c405c 1%); border: none; color: black; font-weight: bold;">
+              {{ message }}
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            {% endfor %}
+          </div>
+          {% endif %}
 
-            <!-- Form Fields -->
-            <div class="mb-3">
-              <label for="id_name" class="form-label fw-bold text-start d-block">Name:</label>
-              {{ form.name|add_class:'form-control shadow-sm' }}
-            </div>
-            <div class="mb-3">
-              <label for="id_email" class="form-label fw-bold text-start d-block">Email:</label>
-              {{ form.email|add_class:'form-control shadow-sm' }}
-            </div>
-            <div class="mb-3">
-              <label for="id_interest" class="form-label fw-bold text-start d-block">Interested in:</label>
-              {{ form.interest|add_class:'form-select shadow-sm' }}
-            </div>
-            <div class="mb-3">
-              <label for="id_message" class="form-label fw-bold text-start d-block">Message:</label>
-              {{ form.message|add_class:'form-control shadow-sm' }}
-            </div>
-            <button class="btn btn-light submit-button" type="submit" data-bss-hover-animate="pulse" style="background: #9c405c; color: white; font-weight: bold;">Submit</button>
-          </form>
-        </div>
+          <!-- Form Fields -->
+          <div class="mb-3">
+            <label for="id_name" class="form-label fw-bold text-start d-block">Name:</label>
+            {{ form.name|add_class:'form-control shadow-sm' }}
+          </div>
+          <div class="mb-3">
+            <label for="id_email" class="form-label fw-bold text-start d-block">Email:</label>
+            {{ form.email|add_class:'form-control shadow-sm' }}
+          </div>
+          <div class="mb-3">
+            <label for="id_interest" class="form-label fw-bold text-start d-block">Interested in:</label>
+            {{ form.interest|add_class:'form-select shadow-sm' }}
+          </div>
+          <div class="mb-3">
+            <label for="id_message" class="form-label fw-bold text-start d-block">Message:</label>
+            {{ form.message|add_class:'form-control shadow-sm' }}
+          </div>
+          <button class="btn btn-light submit-button" type="submit" data-bss-hover-animate="pulse"
+            style="background: #9c405c; color: white; font-weight: bold;">Submit</button>
+        </form>
       </div>
-      <!-- End: Pretty Registration Form -->
     </div>
+    <!-- End: Pretty Registration Form -->
+  </div>
 
-    {% include 'partials/footer.html' %}
+  {% include 'partials/footer.html' %}
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="{% static 'js/script.min.js' %}"></script>
-    <!-- JS to auto-dismiss after 5 seconds -->
-    <script>
-      window.addEventListener('DOMContentLoaded', (event) => {
-        const alerts = document.querySelectorAll('.alert')
-        alerts.forEach((alert) => {
-          setTimeout(() => {
-            const bsAlert = new bootstrap.Alert(alert)
-            bsAlert.close()
-          }, 5000) // 5000ms = 5 seconds
-        })
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="{% static 'js/script.min.js' %}"></script>
+  <!-- JS to auto-dismiss after 5 seconds -->
+  <script>
+    window.addEventListener('DOMContentLoaded', (event) => {
+      const alerts = document.querySelectorAll('.alert')
+      alerts.forEach((alert) => {
+        setTimeout(() => {
+          const bsAlert = new bootstrap.Alert(alert)
+          bsAlert.close()
+        }, 5000) // 5000ms = 5 seconds
       })
-    </script>
-  </body>
+    })
+  </script>
+</body>
+
 </html>
